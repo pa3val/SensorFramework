@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr140ng2sxe5"]
+
+[ext_resource type="PackedScene" uid="uid://c0u31s4cc4a65" path="res://Scenes/Joystick/Joystick.tscn" id="1_0p73i"]
+[ext_resource type="PackedScene" uid="uid://cj2ptle2x0cyq" path="res://Example/Scenes/Player.tscn" id="2_dq551"]
+[ext_resource type="PackedScene" uid="uid://dhmlcujqysxcr" path="res://Scenes/Button/SensorButton.tscn" id="2_fgdjb"]
+
+[node name="Main" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Joystick" parent="UI" instance=ExtResource("1_0p73i")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = -385.0
+offset_right = 390.0
+offset_bottom = -85.0
+grow_vertical = 0
+adapt_mode = 1
+viewport_size = Vector2(1920, 1080)
+joystick_mode = 1
+
+[node name="Button" parent="UI" instance=ExtResource("2_fgdjb")]
+position = Vector2(1279, 683)
+adapt_mode = 3
+
+[node name="Player" parent="." instance=ExtResource("2_dq551")]
+position = Vector2(580, 155)

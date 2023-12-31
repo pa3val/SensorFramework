@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+.vscode/
+android/
+icon.svg.import
+SensorFramework.apk
+SensorFramework.apk.idsig

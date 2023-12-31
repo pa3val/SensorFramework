@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr140ng2sxe5"]
+
+[ext_resource type="PackedScene" uid="uid://c0u31s4cc4a65" path="res://InputFramework/Scenes/Joystick/Joystick.tscn" id="1_0p73i"]
+[ext_resource type="PackedScene" uid="uid://cj2ptle2x0cyq" path="res://Scenes/Player.tscn" id="2_dq551"]
+
+[sub_resource type="GDScript" id="GDScript_t3rqu"]
+script/source = "extends CanvasLayer
+
+func _ready():
+	$Label.text = $Joystick.position #get_viewport().get_visible_rect().size.x / 1920#$Joystick.position
+	pass
+"
+
+[node name="Main" type="Node2D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_t3rqu")
+
+[node name="Joystick" parent="UI" instance=ExtResource("1_0p73i")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+adaptive_mode = 1
+
+[node name="Label" type="Label" parent="UI"]
+offset_left = 773.0
+offset_top = 581.0
+offset_right = 1020.0
+offset_bottom = 721.0
+
+[node name="Player" parent="." instance=ExtResource("2_dq551")]
+position = Vector2(580, 155)

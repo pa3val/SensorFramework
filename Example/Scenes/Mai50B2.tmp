@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr140ng2sxe5"]
+
+[ext_resource type="PackedScene" uid="uid://c0u31s4cc4a65" path="res://InputFramework/Scenes/Joystick/Joystick.tscn" id="1_hhe61"]
+[ext_resource type="PackedScene" uid="uid://cj2ptle2x0cyq" path="res://Scenes/Player.tscn" id="2_dq551"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_dq551")]
+position = Vector2(580, 155)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Joystick" parent="UI" instance=ExtResource("1_hhe61")]
